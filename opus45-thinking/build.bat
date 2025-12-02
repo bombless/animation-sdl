@@ -2,7 +2,9 @@
 @set VS_DIR=C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.29.30133
 @set SDL_DIR=F:\SDL2-2.32.8
 set INCLUDE=%SDL_DIR%\include;%CRT_INCLUDE_DIR%;%VS_DIR%\include
-cl.exe /c main.c
-cl.exe /c render.c
+cl.exe /MD /c main.c
+cl.exe /MD /c render.c
 set LINK=%SDL_DIR%\lib\x64\SDL2.lib %SDL_DIR%\lib\x64\SDL2main.lib
-link.exe /out:main.exe main.obj render.obj /entry:main /subsystem:windows /defaultlib:kernel32.lib shell32.lib vcruntime.lib ucrt.lib
+link.exe /out:main.exe main.obj render.obj /subsystem:windows kernel32.lib shell32.lib ucrt.lib
+
+@del main.obj render.obj
