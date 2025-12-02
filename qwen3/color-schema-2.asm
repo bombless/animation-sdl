@@ -3,25 +3,35 @@ EXTERN memset : PROC
 
 .code
 
-render:
-  sub rsp, 48h
-  push rbx
-  push r12
-  push rdi
-
+pick_color:
 ; 生成一个ARGB颜色值
-  or ebx, ebx
-  mov bl, cl
-  shl ebx, 1
-  or ebx, 0ff000000h
+  or eax, eax
+  mov al, cl
+  shl eax, 2
+  or eax, 0ff000000h
 ; 颜色生成结束
+  ret
 
-  mov eax, ecx
-  mov rcx, rdx
-  mov edx, eax
+
+render:
+
+  push rbx ; rbx 存原始的step值以及后面生成的颜色值
+  push r12 ; r12 存缓冲区基址
+  push rdi ; rdi 在后面动用来填充内存，所以要保护起来
+
+  sub rsp, 48h
+
+  mov r12, rdx
+  mov rbx, rcx
+
+  mov rcx, rbx
+  call pick_color
+
+  mov ebx, eax
+  mov rcx, r12
+  mov edx, ebx
   mov r8d, 80000h
 
-  mov r12, rcx
 
   call memset
 
@@ -49,11 +59,12 @@ done:
   mov r8d, 80000h
   call memset
 
+  add rsp,48h
+
   pop rdi
   pop r12
   pop rbx
 
-  add rsp,48h
   ret
 
 END
