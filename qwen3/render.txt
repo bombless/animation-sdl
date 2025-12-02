@@ -1,0 +1,81 @@
+Microsoft (R) COFF/PE Dumper Version 14.29.30157.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file render.obj
+
+File Type: COFF OBJECT
+
+render:
+  0000000000000000: 48 89 54 24 10     mov         qword ptr [rsp+10h],rdx
+  0000000000000005: 89 4C 24 08        mov         dword ptr [rsp+8],ecx
+  0000000000000009: 48 83 EC 48        sub         rsp,48h
+  000000000000000D: 41 B8 00 00 10 00  mov         r8d,100000h
+  0000000000000013: 33 D2              xor         edx,edx
+  0000000000000015: 48 8B 4C 24 58     mov         rcx,qword ptr [rsp+58h]
+  000000000000001A: E8 00 00 00 00     call        memset
+  000000000000001F: 8B 44 24 50        mov         eax,dword ptr [rsp+50h]
+  0000000000000023: 99                 cdq
+  0000000000000024: 81 E2 FF 01 00 00  and         edx,1FFh
+  000000000000002A: 03 C2              add         eax,edx
+  000000000000002C: 25 FF 01 00 00     and         eax,1FFh
+  0000000000000031: 2B C2              sub         eax,edx
+  0000000000000033: 89 44 24 20        mov         dword ptr [rsp+20h],eax
+  0000000000000037: B8 00 02 00 00     mov         eax,200h
+  000000000000003C: 2B 44 24 20        sub         eax,dword ptr [rsp+20h]
+  0000000000000040: 99                 cdq
+  0000000000000041: 2B C2              sub         eax,edx
+  0000000000000043: D1 F8              sar         eax,1
+  0000000000000045: 89 44 24 30        mov         dword ptr [rsp+30h],eax
+  0000000000000049: B8 00 02 00 00     mov         eax,200h
+  000000000000004E: 2B 44 24 20        sub         eax,dword ptr [rsp+20h]
+  0000000000000052: 99                 cdq
+  0000000000000053: 2B C2              sub         eax,edx
+  0000000000000055: D1 F8              sar         eax,1
+  0000000000000057: 89 44 24 2C        mov         dword ptr [rsp+2Ch],eax
+  000000000000005B: C7 44 24 34 FF FF  mov         dword ptr [rsp+34h],0FFFFFFFFh
+                    FF FF
+  0000000000000063: 8B 44 24 2C        mov         eax,dword ptr [rsp+2Ch]
+  0000000000000067: 89 44 24 24        mov         dword ptr [rsp+24h],eax
+  000000000000006B: EB 0A              jmp         0000000000000077
+  000000000000006D: 8B 44 24 24        mov         eax,dword ptr [rsp+24h]
+  0000000000000071: FF C0              inc         eax
+  0000000000000073: 89 44 24 24        mov         dword ptr [rsp+24h],eax
+  0000000000000077: 8B 44 24 20        mov         eax,dword ptr [rsp+20h]
+  000000000000007B: 8B 4C 24 2C        mov         ecx,dword ptr [rsp+2Ch]
+  000000000000007F: 03 C8              add         ecx,eax
+  0000000000000081: 8B C1              mov         eax,ecx
+  0000000000000083: 39 44 24 24        cmp         dword ptr [rsp+24h],eax
+  0000000000000087: 7D 44              jge         00000000000000CD
+  0000000000000089: 8B 44 24 30        mov         eax,dword ptr [rsp+30h]
+  000000000000008D: 89 44 24 28        mov         dword ptr [rsp+28h],eax
+  0000000000000091: EB 0A              jmp         000000000000009D
+  0000000000000093: 8B 44 24 28        mov         eax,dword ptr [rsp+28h]
+  0000000000000097: FF C0              inc         eax
+  0000000000000099: 89 44 24 28        mov         dword ptr [rsp+28h],eax
+  000000000000009D: 8B 44 24 20        mov         eax,dword ptr [rsp+20h]
+  00000000000000A1: 8B 4C 24 30        mov         ecx,dword ptr [rsp+30h]
+  00000000000000A5: 03 C8              add         ecx,eax
+  00000000000000A7: 8B C1              mov         eax,ecx
+  00000000000000A9: 39 44 24 28        cmp         dword ptr [rsp+28h],eax
+  00000000000000AD: 7D 1C              jge         00000000000000CB
+  00000000000000AF: 69 44 24 24 00 02  imul        eax,dword ptr [rsp+24h],200h
+                    00 00
+  00000000000000B7: 03 44 24 28        add         eax,dword ptr [rsp+28h]
+  00000000000000BB: 48 98              cdqe
+  00000000000000BD: 48 8B 4C 24 58     mov         rcx,qword ptr [rsp+58h]
+  00000000000000C2: 8B 54 24 34        mov         edx,dword ptr [rsp+34h]
+  00000000000000C6: 89 14 81           mov         dword ptr [rcx+rax*4],edx
+  00000000000000C9: EB C8              jmp         0000000000000093
+  00000000000000CB: EB A0              jmp         000000000000006D
+  00000000000000CD: 48 83 C4 48        add         rsp,48h
+  00000000000000D1: C3                 ret
+
+  Summary
+
+          30 .chks64
+          74 .debug$S
+          2F .drectve
+           C .pdata
+          D2 .text$mn
+           8 .xdata

@@ -1,0 +1,128 @@
+Microsoft (R) COFF/PE Dumper Version 14.29.30157.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file render.obj
+
+File Type: COFF OBJECT
+
+render:
+  0000000000000000: 48 89 54 24 10     mov         qword ptr [rsp+10h],rdx
+  0000000000000005: 89 4C 24 08        mov         dword ptr [rsp+8],ecx
+  0000000000000009: 48 83 EC 58        sub         rsp,58h
+  000000000000000D: 48 8B 44 24 68     mov         rax,qword ptr [rsp+68h]
+  0000000000000012: 48 89 44 24 38     mov         qword ptr [rsp+38h],rax
+  0000000000000017: C7 44 24 30 00 02  mov         dword ptr [rsp+30h],200h
+                    00 00
+  000000000000001F: C7 44 24 34 00 02  mov         dword ptr [rsp+34h],200h
+                    00 00
+  0000000000000027: 8B 44 24 60        mov         eax,dword ptr [rsp+60h]
+  000000000000002B: 99                 cdq
+  000000000000002C: 81 E2 FF 01 00 00  and         edx,1FFh
+  0000000000000032: 03 C2              add         eax,edx
+  0000000000000034: 25 FF 01 00 00     and         eax,1FFh
+  0000000000000039: 2B C2              sub         eax,edx
+  000000000000003B: 89 44 24 20        mov         dword ptr [rsp+20h],eax
+  000000000000003F: 8B 44 24 30        mov         eax,dword ptr [rsp+30h]
+  0000000000000043: 0F AF 44 24 34     imul        eax,dword ptr [rsp+34h]
+  0000000000000048: C1 E0 02           shl         eax,2
+  000000000000004B: 48 98              cdqe
+  000000000000004D: 4C 8B C0           mov         r8,rax
+  0000000000000050: 33 D2              xor         edx,edx
+  0000000000000052: 48 8B 4C 24 38     mov         rcx,qword ptr [rsp+38h]
+  0000000000000057: E8 00 00 00 00     call        memset
+  000000000000005C: 83 7C 24 20 00     cmp         dword ptr [rsp+20h],0
+  0000000000000061: 75 05              jne         0000000000000068
+  0000000000000063: E9 15 01 00 00     jmp         000000000000017D
+  0000000000000068: 8B 44 24 20        mov         eax,dword ptr [rsp+20h]
+  000000000000006C: 8B 4C 24 30        mov         ecx,dword ptr [rsp+30h]
+  0000000000000070: 2B C8              sub         ecx,eax
+  0000000000000072: 8B C1              mov         eax,ecx
+  0000000000000074: 99                 cdq
+  0000000000000075: 2B C2              sub         eax,edx
+  0000000000000077: D1 F8              sar         eax,1
+  0000000000000079: 89 44 24 40        mov         dword ptr [rsp+40h],eax
+  000000000000007D: 8B 44 24 20        mov         eax,dword ptr [rsp+20h]
+  0000000000000081: 8B 4C 24 34        mov         ecx,dword ptr [rsp+34h]
+  0000000000000085: 2B C8              sub         ecx,eax
+  0000000000000087: 8B C1              mov         eax,ecx
+  0000000000000089: 99                 cdq
+  000000000000008A: 2B C2              sub         eax,edx
+  000000000000008C: D1 F8              sar         eax,1
+  000000000000008E: 89 44 24 44        mov         dword ptr [rsp+44h],eax
+  0000000000000092: C7 44 24 28 00 00  mov         dword ptr [rsp+28h],0
+                    00 00
+  000000000000009A: EB 0A              jmp         00000000000000A6
+  000000000000009C: 8B 44 24 28        mov         eax,dword ptr [rsp+28h]
+  00000000000000A0: FF C0              inc         eax
+  00000000000000A2: 89 44 24 28        mov         dword ptr [rsp+28h],eax
+  00000000000000A6: 8B 44 24 20        mov         eax,dword ptr [rsp+20h]
+  00000000000000AA: 39 44 24 28        cmp         dword ptr [rsp+28h],eax
+  00000000000000AE: 0F 8D C9 00 00 00  jge         000000000000017D
+  00000000000000B4: C7 44 24 24 00 00  mov         dword ptr [rsp+24h],0
+                    00 00
+  00000000000000BC: EB 0A              jmp         00000000000000C8
+  00000000000000BE: 8B 44 24 24        mov         eax,dword ptr [rsp+24h]
+  00000000000000C2: FF C0              inc         eax
+  00000000000000C4: 89 44 24 24        mov         dword ptr [rsp+24h],eax
+  00000000000000C8: 8B 44 24 20        mov         eax,dword ptr [rsp+20h]
+  00000000000000CC: 39 44 24 24        cmp         dword ptr [rsp+24h],eax
+  00000000000000D0: 0F 8D A2 00 00 00  jge         0000000000000178
+  00000000000000D6: 8B 44 24 24        mov         eax,dword ptr [rsp+24h]
+  00000000000000DA: 8B 4C 24 40        mov         ecx,dword ptr [rsp+40h]
+  00000000000000DE: 03 C8              add         ecx,eax
+  00000000000000E0: 8B C1              mov         eax,ecx
+  00000000000000E2: 89 44 24 4C        mov         dword ptr [rsp+4Ch],eax
+  00000000000000E6: 8B 44 24 28        mov         eax,dword ptr [rsp+28h]
+  00000000000000EA: 8B 4C 24 44        mov         ecx,dword ptr [rsp+44h]
+  00000000000000EE: 03 C8              add         ecx,eax
+  00000000000000F0: 8B C1              mov         eax,ecx
+  00000000000000F2: 89 44 24 48        mov         dword ptr [rsp+48h],eax
+  00000000000000F6: 83 7C 24 24 00     cmp         dword ptr [rsp+24h],0
+  00000000000000FB: 74 1F              je          000000000000011C
+  00000000000000FD: 8B 44 24 20        mov         eax,dword ptr [rsp+20h]
+  0000000000000101: FF C8              dec         eax
+  0000000000000103: 39 44 24 24        cmp         dword ptr [rsp+24h],eax
+  0000000000000107: 74 13              je          000000000000011C
+  0000000000000109: 83 7C 24 28 00     cmp         dword ptr [rsp+28h],0
+  000000000000010E: 74 0C              je          000000000000011C
+  0000000000000110: 8B 44 24 20        mov         eax,dword ptr [rsp+20h]
+  0000000000000114: FF C8              dec         eax
+  0000000000000116: 39 44 24 28        cmp         dword ptr [rsp+28h],eax
+  000000000000011A: 75 57              jne         0000000000000173
+  000000000000011C: 8B 44 24 48        mov         eax,dword ptr [rsp+48h]
+  0000000000000120: 0F AF 44 24 30     imul        eax,dword ptr [rsp+30h]
+  0000000000000125: 03 44 24 4C        add         eax,dword ptr [rsp+4Ch]
+  0000000000000129: C1 E0 02           shl         eax,2
+  000000000000012C: 89 44 24 2C        mov         dword ptr [rsp+2Ch],eax
+  0000000000000130: 48 63 44 24 2C     movsxd      rax,dword ptr [rsp+2Ch]
+  0000000000000135: 48 8B 4C 24 38     mov         rcx,qword ptr [rsp+38h]
+  000000000000013A: C6 04 01 FF        mov         byte ptr [rcx+rax],0FFh
+  000000000000013E: 8B 44 24 2C        mov         eax,dword ptr [rsp+2Ch]
+  0000000000000142: FF C0              inc         eax
+  0000000000000144: 48 98              cdqe
+  0000000000000146: 48 8B 4C 24 38     mov         rcx,qword ptr [rsp+38h]
+  000000000000014B: C6 04 01 FF        mov         byte ptr [rcx+rax],0FFh
+  000000000000014F: 8B 44 24 2C        mov         eax,dword ptr [rsp+2Ch]
+  0000000000000153: 83 C0 02           add         eax,2
+  0000000000000156: 48 98              cdqe
+  0000000000000158: 48 8B 4C 24 38     mov         rcx,qword ptr [rsp+38h]
+  000000000000015D: C6 04 01 FF        mov         byte ptr [rcx+rax],0FFh
+  0000000000000161: 8B 44 24 2C        mov         eax,dword ptr [rsp+2Ch]
+  0000000000000165: 83 C0 03           add         eax,3
+  0000000000000168: 48 98              cdqe
+  000000000000016A: 48 8B 4C 24 38     mov         rcx,qword ptr [rsp+38h]
+  000000000000016F: C6 04 01 FF        mov         byte ptr [rcx+rax],0FFh
+  0000000000000173: E9 46 FF FF FF     jmp         00000000000000BE
+  0000000000000178: E9 1F FF FF FF     jmp         000000000000009C
+  000000000000017D: 48 83 C4 58        add         rsp,58h
+  0000000000000181: C3                 ret
+
+  Summary
+
+          30 .chks64
+          70 .debug$S
+          2F .drectve
+           C .pdata
+         182 .text$mn
+           8 .xdata
