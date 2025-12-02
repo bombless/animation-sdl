@@ -5,6 +5,10 @@ set INCLUDE=%SDL_DIR%\include;%CRT_INCLUDE_DIR%;%VS_DIR%\include
 cl.exe /MD /c main.c
 ml64.exe /c render.asm
 ml64.exe /c color-schema-1.asm
+ml64.exe /c color-schema-2.asm
 set LINK=%SDL_DIR%\lib\x64\SDL2.lib %SDL_DIR%\lib\x64\SDL2main.lib
 link.exe /DEBUG /out:main.exe main.obj render.obj /subsystem:windows kernel32.lib shell32.lib ucrt.lib
 link.exe /DEBUG /out:schema-1.exe main.obj color-schema-1.obj /subsystem:windows kernel32.lib shell32.lib ucrt.lib
+link.exe /DEBUG /out:schema-2.exe main.obj color-schema-2.obj /subsystem:windows kernel32.lib shell32.lib ucrt.lib
+
+del *.obj
